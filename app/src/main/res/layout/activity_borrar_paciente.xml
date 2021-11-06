@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".datosPaciente">
+    tools:context=".borrarPaciente">
+
 
 
     <LinearLayout
@@ -24,13 +25,14 @@
         app:layout_constraintVertical_bias="0.942">
 
 
-        <EditText
-            android:id="@+id/pacienteNameText"
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Nombre"
-            android:inputType="textPersonName" />
+            android:gravity="center"
+            android:text="Coloque el correo del paciente a borrar"
+            android:textColor="@color/purple_500"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/pacienteCorreoText"
@@ -41,32 +43,14 @@
             android:hint="Correo"
             android:inputType="textPersonName" />
 
-        <EditText
-            android:id="@+id/numeroSSText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:ems="10"
-            android:hint="Número de seguro social"
-            android:inputType="textPersonName" />
-
-        <EditText
-            android:id="@+id/polizaSeguroText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:ems="10"
-            android:hint="Póliza de seguro"
-            android:inputType="textPersonName" />
-
 
         <Button
             android:id="@+id/pacienteEliminarBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:onClick="pacienteonClick"
-            android:text="Enviar datos" />
+            android:onClick="deleteOnClick"
+            android:text="Borrar" />
     </LinearLayout>
 
     <TextView
@@ -74,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="Datos de paciente"
+        android:text="Borrar paciente"
         android:textColor="@color/purple_500"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"

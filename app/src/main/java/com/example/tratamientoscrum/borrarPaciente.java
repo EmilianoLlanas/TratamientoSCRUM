@@ -18,56 +18,42 @@ import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.Map;
 
-public class datosPaciente extends AppCompatActivity {
+public class borrarPaciente extends AppCompatActivity {
 
-    EditText nombreET, correoET,numeroSSET,polizaSSET;
-    String nombre, correo,numeroSS,polizaSS;
-    Button botonDatos;
+    EditText correoET;
+    String correo;
+    Button botonEliminar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_datos_paciente);
+        setContentView(R.layout.activity_borrar_paciente);
     }
-
-    public void pacienteonClick(View view)
+    public void deleteOnClick(View view)
     {
-        botonDatos=(Button)findViewById(R.id.pacienteEliminarBtn);
-
-        nombreET= findViewById(R.id.pacienteNameText);
-        nombre=nombreET.getText().toString();
-
+        botonEliminar=(Button)findViewById(R.id.pacienteEliminarBtn);
         correoET =(EditText)findViewById(R.id.pacienteCorreoText);
         correo = correoET.getText().toString();
 
-        numeroSSET=(EditText)findViewById(R.id.numeroSSText);
-        numeroSS=numeroSSET.getText().toString();
-
-        polizaSSET=(EditText)findViewById(R.id.polizaSeguroText);
-        polizaSS=polizaSSET.getText().toString();
-
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         String URL = "http://10.0.2.2:5000/patient/";
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL,
+        StringRequest stringRequest = new StringRequest(Request.Method.DELETE, URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(datosPaciente.this,response,Toast.LENGTH_LONG).show();
+                        Toast.makeText(borrarPaciente.this,response,Toast.LENGTH_LONG).show();
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(datosPaciente.this,error.toString(),Toast.LENGTH_LONG).show();
+                        Toast.makeText(borrarPaciente.this,error.toString(),Toast.LENGTH_LONG).show();
                     }
                 }){
             @Override
             protected Map<String,String> getParams(){
                 Map<String,String> params = new HashMap<String, String>();
-                params.put("nombre",nombre);
-                params.put("correo", correo);
-                params.put("numeroSeguroSocial",numeroSS);
-                params.put("polizaSeguroSocial",polizaSS);
+                params.put("numeroSeguroSocial",correo);
                 return params;
             }
 
@@ -75,4 +61,8 @@ public class datosPaciente extends AppCompatActivity {
 
         requestQueue.add(stringRequest);
     }
+
+
+
+
 }
