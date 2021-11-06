@@ -5,6 +5,7 @@ plugins {
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
+    useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
         applicationId "com.example.tratamientoscrum"
@@ -41,4 +42,6 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.7.1'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.4.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
+
+    implementation 'com.android.volley:volley:1.1.1'
 }
