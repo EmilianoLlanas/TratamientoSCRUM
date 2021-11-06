@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:onClick="onClickModifyPaciente"
     tools:context=".pantallaInicio">
 
     <TextView
@@ -22,19 +21,17 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="278dp"
-        android:layout_height="398dp"
+        android:layout_width="308dp"
+        android:layout_height="439dp"
 
-        android:layout_marginBottom="140dp"
+        android:layout_marginTop="36dp"
         android:background="@drawable/layout_bg"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/datosPacienteTV"
-        app:layout_constraintVertical_bias="0.942">
+        app:layout_constraintTop_toBottomOf="@+id/datosPacienteTV">
 
         <Button
             android:id="@+id/registroDoctorBtn"
@@ -60,6 +57,18 @@
             app:layout_constraintTop_toBottomOf="@+id/registroDoctorBtn" />
 
         <Button
+            android:id="@+id/registroRecetaBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:onClick="onClickReceta"
+            android:text="Registro receta"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.477"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/registroDoctorBtn" />
+
+        <Button
             android:id="@+id/modificarPacienteBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -78,6 +87,18 @@
             android:layout_marginTop="20dp"
             android:onClick="onClickBorrarPaciente"
             android:text="Borrar Paciente"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.488"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/modificarPacienteBtn" />
+
+        <Button
+            android:id="@+id/pacientesdrBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:onClick="onClickPacientesDr"
+            android:text="Pacientes-DR"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.488"
             app:layout_constraintStart_toStartOf="parent"

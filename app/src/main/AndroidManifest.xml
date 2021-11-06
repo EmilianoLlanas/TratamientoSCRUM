@@ -13,6 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TratamientoSCRUM"
         android:usesCleartextTraffic="true">
+        <activity android:name=".consultarPacientesDr"></activity>
+        <activity android:name=".datosReceta" />
         <activity android:name=".pantallaInicio">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,9 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".borrarPaciente"/>
+        <activity android:name=".borrarPaciente" />
         <activity android:name=".modificarDatosPaciente" />
-        <activity android:name=".datosPaciente"></activity>
+        <activity android:name=".datosPaciente" />
         <activity android:name=".MainActivity" />
     </application>
 

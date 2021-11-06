@@ -19,56 +19,59 @@ import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.Map;
 
-public class datosPaciente extends AppCompatActivity {
-
-    EditText nombreET, correoET,numeroSSET,polizaSSET;
-    String nombre, correo,numeroSS,polizaSS;
+public class datosReceta extends AppCompatActivity {
+    EditText correoDrET, correoPacET,tratamientoET,idCedulaET,diagnosticoET;
+    String correoDr, correoPac,tratamiento,idCedula,diagnostico;
     Button botonDatos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_datos_paciente);
+        setContentView(R.layout.activity_datos_receta);
     }
 
     public void pacienteonClick(View view)
     {
         botonDatos=(Button)findViewById(R.id.datosRecetaBtn);
 
-        nombreET= findViewById(R.id.pacienteNameText);
-        nombre=nombreET.getText().toString();
+        correoDrET= findViewById(R.id.correoDrConsText);
+        correoDr=correoDrET.getText().toString();
 
-        correoET =(EditText)findViewById(R.id.pacienteDCorreoText);
-        correo = correoET.getText().toString();
+        correoPacET =(EditText)findViewById(R.id.correoPacienteText);
+        correoPac = correoPacET.getText().toString();
 
-        numeroSSET=(EditText)findViewById(R.id.numeroSSText);
-        numeroSS=numeroSSET.getText().toString();
+        tratamientoET=(EditText)findViewById(R.id.tratamientoText);
+        tratamiento=tratamientoET.getText().toString();
 
-        polizaSSET=(EditText)findViewById(R.id.polizaSeguroText);
-        polizaSS=polizaSSET.getText().toString();
+        idCedulaET=(EditText)findViewById(R.id.idCedulaText);
+        idCedula=idCedulaET.getText().toString();
+
+        diagnosticoET=(EditText)findViewById(R.id.diagnosticoText);
+        diagnostico=diagnosticoET.getText().toString();
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        String URL = "http://10.0.2.2:5000/patient/";
+        String URL = "http://10.0.2.2:5000/prescription/";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(datosPaciente.this,response,Toast.LENGTH_LONG).show();
+                        Toast.makeText(datosReceta.this,response,Toast.LENGTH_LONG).show();
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(datosPaciente.this,error.toString(),Toast.LENGTH_LONG).show();
+                        Toast.makeText(datosReceta.this,error.toString(),Toast.LENGTH_LONG).show();
                     }
                 }){
             @Override
             protected Map<String,String> getParams(){
                 Map<String,String> params = new HashMap<String, String>();
-                params.put("nombre",nombre);
-                params.put("correo", correo);
-                params.put("numeroSeguroSocial",numeroSS);
-                params.put("polizaSeguroSocial",polizaSS);
+                params.put("medico",correoDr);
+                params.put("paciente", correoPac);
+                params.put("tratamiento",tratamiento);
+                params.put("idCedula",idCedula);
+                params.put("diagnostico",diagnostico);
                 return params;
             }
 

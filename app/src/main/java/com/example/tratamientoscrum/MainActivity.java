@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClick(View view)
     {
-        botonDatos=(Button)findViewById(R.id.pacienteEliminarBtn);
+        botonDatos=(Button)findViewById(R.id.datosRecetaBtn);
 
         nombreET= findViewById(R.id.nombreText);
         nombre=nombreET.getText().toString();

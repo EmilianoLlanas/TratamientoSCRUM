@@ -30,4 +30,13 @@ public class pantallaInicio extends AppCompatActivity {
         Intent myIntent = new Intent(view.getContext(), borrarPaciente.class);
         startActivity(myIntent);
     }
+    public void onClickReceta(View view) {
+        Intent myIntent = new Intent(view.getContext(), datosReceta.class);
+        startActivity(myIntent);
+    }
+
+    public void onClickPacientesDr(View view) {
+        Intent myIntent = new Intent(view.getContext(), consultarPacientesDr.class);
+        startActivity(myIntent);
+    }
 }
