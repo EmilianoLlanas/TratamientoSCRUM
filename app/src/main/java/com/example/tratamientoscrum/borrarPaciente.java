@@ -2,7 +2,9 @@ package com.example.tratamientoscrum;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,7 +24,6 @@ public class borrarPaciente extends AppCompatActivity {
 
     EditText correoET;
     String correo;
-    Button botonEliminar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +32,12 @@ public class borrarPaciente extends AppCompatActivity {
     }
     public void deleteOnClick(View view)
     {
-        botonEliminar=(Button)findViewById(R.id.pacienteEliminarBtn);
+
         correoET =(EditText)findViewById(R.id.pacienteDCorreoText);
         correo = correoET.getText().toString();
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        String URL = "http://10.0.2.2:5000/patient/";
+        String URL = "http://10.0.2.2:5000/patient/?correo="+correo;
         StringRequest stringRequest = new StringRequest(Request.Method.DELETE, URL,
                 new Response.Listener<String>() {
                     @Override
@@ -50,16 +51,16 @@ public class borrarPaciente extends AppCompatActivity {
                         Toast.makeText(borrarPaciente.this,error.toString(),Toast.LENGTH_LONG).show();
                     }
                 }){
-            @Override
-            protected Map<String,String> getParams(){
-                Map<String,String> params = new HashMap<String, String>();
-                params.put("correo",correo);
-                return params;
-            }
+
 
         };
 
         requestQueue.add(stringRequest);
+    }
+
+    public void onClickMain(View view) {
+        Intent myIntent = new Intent(view.getContext(), pantallaInicio.class);
+        startActivity(myIntent);
     }
 
 

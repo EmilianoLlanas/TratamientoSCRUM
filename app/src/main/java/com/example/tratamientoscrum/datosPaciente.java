@@ -2,6 +2,7 @@ package com.example.tratamientoscrum;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -74,5 +75,10 @@ public class datosPaciente extends AppCompatActivity {
         };
 
         requestQueue.add(stringRequest);
+    }
+
+    public void onClickMain(View view) {
+        Intent myIntent = new Intent(view.getContext(), pantallaInicio.class);
+        startActivity(myIntent);
     }
 }
