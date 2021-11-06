@@ -4,86 +4,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".MainActivity">
+    tools:context=".modificarDatosPaciente">
+
+
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="279dp"
-        android:layout_height="532dp"
+        android:layout_width="278dp"
+        android:layout_height="398dp"
 
+        android:layout_marginBottom="140dp"
         android:background="@drawable/layout_bg"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/datosMedicoTV"
-        app:layout_constraintVertical_bias="0.194">
+        app:layout_constraintTop_toBottomOf="@+id/datosPacienteTV"
+        app:layout_constraintVertical_bias="0.942">
 
 
         <EditText
-            android:id="@+id/nombreText"
+            android:id="@+id/pacienteNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Nombre"
-            android:inputType="textPersonName" />
+            android:text="Nombre"
+            android:inputType="textPersonName"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"/>
 
         <EditText
-            android:id="@+id/especialidadText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:ems="10"
-            android:hint="Especialidad"
-            android:inputType="textPersonName" />
-
-        <EditText
-            android:id="@+id/cedulaText"
+            android:id="@+id/pacienteLastNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:ems="10"
-            android:hint="ID Cedula"
-            android:inputType="textPersonName" />
+            android:text="Apellidos"
+            android:inputType="textPersonName"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"/>
 
         <EditText
-            android:id="@+id/edadText"
+            android:id="@+id/numeroSSText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:ems="10"
-            android:hint="Edad"
+            android:hint="Número de seguro social"
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/contactoText"
+            android:id="@+id/polizaSeguroText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:ems="10"
-            android:hint="Número de contacto"
+            android:hint="Póliza de seguro"
             android:inputType="textPersonName" />
 
-        <EditText
-            android:id="@+id/correoText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:ems="10"
-            android:hint="Correo"
-            android:inputType="textPersonName" />
-
-        <EditText
-            android:id="@+id/contraseñaText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:ems="10"
-            android:hint="Contraseña"
-            android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/enviarDatosBtn"
@@ -94,15 +78,16 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/datosMedicoTV"
+        android:id="@+id/datosPacienteTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Datos de médico"
+        android:layout_marginTop="28dp"
+        android:gravity="center"
+        android:text="Modificación de datos de paciente"
         android:textColor="@color/purple_500"
-        android:textSize="36sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
