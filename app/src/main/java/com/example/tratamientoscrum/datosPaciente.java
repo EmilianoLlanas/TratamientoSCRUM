@@ -37,7 +37,7 @@ public class datosPaciente extends AppCompatActivity {
         nombreET= findViewById(R.id.pacienteNameText);
         nombre=nombreET.getText().toString();
 
-        correoET =(EditText)findViewById(R.id.pacienteCorreoText);
+        correoET =(EditText)findViewById(R.id.pacienteDCorreoText);
         correo = correoET.getText().toString();
 
         numeroSSET=(EditText)findViewById(R.id.numeroSSText);

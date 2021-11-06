@@ -32,7 +32,7 @@ public class borrarPaciente extends AppCompatActivity {
     public void deleteOnClick(View view)
     {
         botonEliminar=(Button)findViewById(R.id.pacienteEliminarBtn);
-        correoET =(EditText)findViewById(R.id.pacienteCorreoText);
+        correoET =(EditText)findViewById(R.id.pacienteDCorreoText);
         correo = correoET.getText().toString();
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
@@ -53,7 +53,7 @@ public class borrarPaciente extends AppCompatActivity {
             @Override
             protected Map<String,String> getParams(){
                 Map<String,String> params = new HashMap<String, String>();
-                params.put("numeroSeguroSocial",correo);
+                params.put("correo",correo);
                 return params;
             }
 
